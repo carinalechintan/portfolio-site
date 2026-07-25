@@ -203,6 +203,45 @@
   margin-bottom: 12px;
 }
 
+.projects-page .tech-brad-quick,
+.projects-page .cirjea-compact {
+  border: 1px solid rgba(53, 85, 40, 0.2);
+  border-radius: 14px;
+  background: #f7faef;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.projects-page .tech-brad-quick h3 {
+  margin: 0 0 10px;
+  color: var(--proj-accent-dark);
+  font-size: 1rem;
+}
+
+.projects-page .tech-brad-quick ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.projects-page .tech-brad-quick li {
+  margin-bottom: 6px;
+  color: #273425;
+  font-size: 0.92rem;
+}
+
+.projects-page .cirjea-compact-title {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--proj-accent-dark);
+}
+
+.projects-page .cirjea-compact-text {
+  margin: 0 0 10px;
+  color: #3e4a3c;
+  font-size: 0.9rem;
+}
+
 .projects-page .toggle-compact-btn {
   border: 1px solid var(--proj-line);
   border-radius: 999px;
