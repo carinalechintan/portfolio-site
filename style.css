@@ -2571,5 +2571,66 @@ a {
   .sci-papers ol {
     margin-left: 18px;
   }
+
+  .cv-page,
+  main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .page-hero h1,
+  .cv-page .page-hero h1 {
+    font-size: clamp(1.85rem, 9vw, 2.35rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .page-hero .faculty,
+  .cv-page .faculty {
+    letter-spacing: 0.12em !important;
+  }
+
+  .section-split nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .section-split nav a {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 10px;
+    text-decoration: none;
+    font-size: 0.86rem;
+  }
+
+  .project-meta li,
+  .results-list li,
+  .publication-item p,
+  .sci-papers li {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .results-header,
+  .section-header-blue {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero,
+  .section,
+  .highlight,
+  .page-hero,
+  .cv-section,
+  .project-content {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .buttons a,
+  .company-link-btn {
+    font-size: 0.92rem;
+  }
 }
 
