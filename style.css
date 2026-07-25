@@ -2482,3 +2482,94 @@ main {
   }
 }
 
+/* Global mobile fixes for all pages */
+html,
+body {
+  overflow-x: clip;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.section,
+.hero,
+.highlight,
+.page-hero,
+.cv-hero,
+.cv-section,
+.project-card,
+.publication-item,
+.highlight-box,
+.info-card {
+  min-width: 0;
+}
+
+.section p,
+.section li,
+.project-content p,
+.project-content li,
+.publication-item p,
+.project-meta li,
+.sci-papers li,
+a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .info-grid,
+  .card-grid,
+  .grid-2,
+  .editorial-grid,
+  .publication-section .publication-group,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .personal-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .profile-list strong {
+    min-width: 0;
+  }
+
+  .nav-links a,
+  nav a {
+    font-size: 0.86rem;
+    padding: 7px 9px;
+  }
+
+  .sci-papers {
+    font-size: 0.94rem;
+  }
+
+  .sci-papers ol {
+    margin-left: 18px;
+  }
+}
+
