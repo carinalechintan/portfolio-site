@@ -1,0 +1,269 @@
+/* Dedicated redesign for Projects page */
+.projects-page {
+  --proj-bg: #f3efe7;
+  --proj-surface: #fffdf9;
+  --proj-surface-soft: #f8f5ee;
+  --proj-ink: #1f2a23;
+  --proj-muted: #5f675f;
+  --proj-line: rgba(31, 42, 35, 0.12);
+  --proj-accent: #4f7a3f;
+  --proj-accent-dark: #355528;
+  --proj-accent-soft: #dde8d5;
+  background: radial-gradient(circle at top right, #eaf1dc 0, transparent 34%), var(--proj-bg);
+  color: var(--proj-ink);
+}
+
+.projects-page header {
+  border: 1px solid var(--proj-line);
+  border-radius: 18px;
+  margin-top: 12px;
+  background: rgba(255, 253, 249, 0.92);
+}
+
+.projects-page .brand a,
+.projects-page nav a {
+  color: var(--proj-ink);
+}
+
+.projects-page nav a:hover {
+  background: var(--proj-surface-soft);
+  color: var(--proj-accent-dark);
+}
+
+.projects-page main.section {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding-top: 22px;
+}
+
+.projects-page .projects-header {
+  border: 1px solid var(--proj-line);
+  border-radius: 24px;
+  padding: clamp(24px, 4vw, 40px);
+  background: linear-gradient(135deg, #fffdf9 0%, #f5f1e7 100%);
+  box-shadow: 0 20px 34px rgba(31, 42, 35, 0.08);
+}
+
+.projects-page .projects-header::before,
+.projects-page .projects-header::after {
+  display: none;
+}
+
+.projects-page .projects-header h1 {
+  color: var(--proj-ink);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.projects-page .projects-subtitle {
+  color: var(--proj-muted);
+  max-width: 66ch;
+}
+
+.projects-page .projects-meta {
+  margin-top: 18px;
+}
+
+.projects-page .meta-badge {
+  border-radius: 999px;
+  border: 1px solid var(--proj-line);
+  color: var(--proj-accent-dark);
+  background: var(--proj-surface);
+}
+
+.projects-page .project-list {
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.projects-page .project-card {
+  border-radius: 22px;
+  border: 1px solid var(--proj-line);
+  box-shadow: 0 12px 30px rgba(31, 42, 35, 0.06);
+  background: var(--proj-surface);
+  overflow: hidden;
+}
+
+.projects-page .project-card::before {
+  display: none;
+}
+
+.projects-page .project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(31, 42, 35, 0.1);
+}
+
+.projects-page .project-card-active,
+.projects-page .project-card-upcoming {
+  border-left: 0;
+}
+
+.projects-page .project-header {
+  padding: 22px;
+  background: var(--proj-surface);
+  border-bottom: 1px solid var(--proj-line);
+}
+
+.projects-page .project-title-section h2 {
+  color: var(--proj-ink);
+  font-size: 1.36rem;
+}
+
+.projects-page .project-tag {
+  color: var(--proj-muted);
+}
+
+.projects-page .project-badge {
+  border-radius: 999px;
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+
+.projects-page .badge-completed {
+  background: linear-gradient(135deg, #4f7a3f, #355528);
+}
+
+.projects-page .badge-ongoing {
+  background: linear-gradient(135deg, #a3543d, #7f3d2c);
+}
+
+.projects-page .project-toggle {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--proj-accent), var(--proj-accent-dark));
+  box-shadow: none;
+}
+
+.projects-page .project-toggle:hover {
+  transform: scale(1.03);
+}
+
+.projects-page .project-content {
+  padding: 22px;
+  border-top: 0;
+}
+
+.projects-page .project-meta-highlight,
+.projects-page .highlight-box,
+.projects-page .funding-banner,
+.projects-page .publication-item,
+.projects-page .highlight-section {
+  border: 1px solid var(--proj-line);
+  border-left: 0;
+  border-radius: 16px;
+  box-shadow: none;
+  background: var(--proj-surface-soft);
+}
+
+.projects-page .highlight-box,
+.projects-page .project-meta-highlight,
+.projects-page .funding-banner,
+.projects-page .publication-item {
+  padding: 18px;
+}
+
+.projects-page .funding-banner::before {
+  display: none;
+}
+
+.projects-page .project-meta li {
+  border-bottom: 1px dashed rgba(31, 42, 35, 0.2);
+}
+
+.projects-page .project-meta li:last-child {
+  border-bottom: 0;
+}
+
+.projects-page .project-meta strong,
+.projects-page .project-role,
+.projects-page .highlight-label,
+.projects-page .highlight-box h3,
+.projects-page .results-header,
+.projects-page .section-header-blue,
+.projects-page .publication-item p:first-child {
+  color: var(--proj-accent-dark);
+}
+
+.projects-page .results-header,
+.projects-page .section-header-blue {
+  border-bottom-color: var(--proj-accent);
+}
+
+.projects-page .results-header::after,
+.projects-page .section-header-blue::before {
+  display: none;
+}
+
+.projects-page .highlight-date,
+.projects-page .highlight-duration {
+  background: var(--proj-accent-soft);
+  color: var(--proj-accent-dark);
+}
+
+.projects-page .results-list li {
+  background: #eef3e7;
+  border-left: 3px solid var(--proj-accent);
+  border-radius: 10px;
+  padding-left: 16px;
+}
+
+.projects-page .results-list li::before {
+  left: -9999px;
+}
+
+.projects-page .company-section-tech-brad {
+  background: var(--proj-surface);
+  border: 1px solid var(--proj-line);
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.projects-page .company-link-btn {
+  background: linear-gradient(135deg, var(--proj-accent), var(--proj-accent-dark));
+  border-color: var(--proj-accent-dark);
+}
+
+.projects-page .company-link-btn:hover {
+  border-color: #2d461f;
+  box-shadow: 0 8px 20px rgba(53, 85, 40, 0.24);
+}
+
+@media (max-width: 900px) {
+  .projects-page header {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-page .projects-header,
+  .projects-page .project-content,
+  .projects-page .project-header,
+  .projects-page .highlight-box,
+  .projects-page .project-meta-highlight,
+  .projects-page .funding-banner,
+  .projects-page .publication-item,
+  .projects-page .company-section-tech-brad {
+    padding: 14px;
+  }
+
+  .projects-page .project-title-with-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .projects-page .project-title-section h2 {
+    font-size: 1.16rem;
+  }
+
+  .projects-page .projects-meta {
+    gap: 7px;
+  }
+
+  .projects-page .meta-badge {
+    width: 100%;
+    text-align: center;
+  }
+}
