@@ -48,7 +48,7 @@
             </button>
           </div>
 
-          <div class="project-content" style="display: none;">
+          <div class="project-content">
             <div class="project-meta-highlight">
               <p class="project-role"><strong>Role:</strong> Project Director</p>
               <div class="highlight-section">
@@ -123,7 +123,7 @@
             </button>
           </div>
 
-          <div class="project-content" style="display: none;">
+          <div class="project-content">
             <div class="funding-banner">
               <p><strong>Project Funded through:</strong> National Research, Development and Innovation Program IV (PNCDI IV), Innovation Voucher (CEC) Competition, administered by UEFISCDI</p>
             </div>
@@ -157,9 +157,9 @@
               <p><strong>Research Provider:</strong> University of Agricultural Sciences and Veterinary Medicine Cluj-Napoca, Faculty of Forestry and Cadastre</p>
             </div>
 
-            <div class="company-section">
+            <div class="company-section company-section-tech-brad">
               <div class="company-info">
-                <h3>About CÎRJEA COMPANY S.R.L.</h3>
+                <h3>CÎRJEA COMPANY S.R.L. - TECH-BRAD Beneficiary</h3>
                 <p><strong>CÎRJEA COMPANY S.R.L.</strong> is a Romanian private capital company active in silviculture and forestry exploitation, operating since 2018. The company is authorized for wood mass exploitation, holding a certificate of compliance for forestry sector activities and an annual exploitation capacity of approximately 10,000 m³ of standing wood.</p>
                 
                 <p>Over the course of its operations, the company has consolidated its experience in executing forestry work, with emphasis on respecting the principles of sustainable forest management, responsible use of natural resources, and application of modern technologies specific to the field. Through its activities, the company contributes to responsible valorization of forest resources and supports the sustainable development objectives of the forestry sector.</p>
@@ -181,10 +181,19 @@
 
                 <p class="company-mission"><em>The company is committed to sustainable forest management and responsible use of natural resources, contributing to the development objectives of Romania's forestry sector.</em></p>
 
-                <a href="https://listafirme.ro/cirjea-company-srl-38892446/" target="_blank" rel="noopener" class="company-link-btn">View Company Profile on ListaFirme.ro</a>
+                <div class="company-link-wrap">
+                  <a href="https://listafirme.ro/cirjea-company-srl-38892446/" target="_blank" rel="noopener" class="company-link-btn" aria-label="Open official CÎRJEA COMPANY profile on ListaFirme.ro">
+                    <span>View Official CÎRJEA COMPANY Profile</span>
+                    <span class="company-link-arrow" aria-hidden="true">-></span>
+                  </a>
+                  <p class="company-link-note">Source: ListaFirme.ro business profile</p>
+                </div>
               </div>
               <div class="company-image">
-                <img src="images/forest-trees.svg" alt="CÎRJEA COMPANY - Sustainable Forest Management" class="company-img">
+                <figure class="company-image-figure">
+                  <img src="images/forest-trees.svg" alt="CÎRJEA COMPANY - Sustainable Forest Management" class="company-img" loading="lazy">
+                  <figcaption class="company-image-caption">Sustainable forestry focus for the TECH-BRAD implementation.</figcaption>
+                </figure>
               </div>
             </div>
 
@@ -253,12 +262,12 @@
         const card = this.closest('.project-card');
         const content = card.querySelector('.project-content');
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        
+
         if (isExpanded) {
-          content.style.display = 'none';
+          content.classList.add('is-collapsed');
           this.setAttribute('aria-expanded', 'false');
         } else {
-          content.style.display = 'block';
+          content.classList.remove('is-collapsed');
           this.setAttribute('aria-expanded', 'true');
         }
       });
