@@ -31,11 +31,18 @@
             <span class="meta-badge">2 proiecte active</span>
             <span class="meta-badge">Rezultate publicate</span>
           </div>
+          <div class="projects-actions" aria-label="Actiuni rapide proiecte">
+            <button type="button" class="projects-action-btn" data-action="expand-all">Deschide toate</button>
+            <button type="button" class="projects-action-btn" data-action="collapse-all">Inchide toate</button>
+            <a class="projects-action-link" href="#proj-rofirfuture">ROFIRFUTURE</a>
+            <a class="projects-action-link" href="#proj-tech-brad">TECH-BRAD</a>
+          </div>
+          <p class="projects-hint">Pagini compacte: detaliile sunt inchise implicit. Apasa + la proiectul dorit.</p>
         </div>
       </div>
 
       <div class="project-list">
-        <article class="project-card project-card-active">
+        <article class="project-card project-card-active" id="proj-rofirfuture">
           <div class="project-header">
             <div class="project-title-section">
               <div class="project-title-with-badge">
@@ -49,7 +56,7 @@
             </button>
           </div>
 
-          <div class="project-content">
+          <div class="project-content is-collapsed">
             <div class="project-meta-highlight">
               <p class="project-role"><strong>Rol:</strong> Director de proiect</p>
               <div class="highlight-section">
@@ -110,7 +117,7 @@
           </div>
         </article>
 
-        <article class="project-card project-card-active">
+        <article class="project-card project-card-active" id="proj-tech-brad">
           <div class="project-header">
             <div class="project-title-section">
               <div class="project-title-with-badge">
@@ -124,7 +131,7 @@
             </button>
           </div>
 
-          <div class="project-content">
+          <div class="project-content is-collapsed">
             <div class="funding-banner">
               <p><strong>Proiect finantat prin:</strong> Programul National de Cercetare, Dezvoltare si Inovare IV (PNCDI IV), competitia Voucher de inovare (CEC), administrata de UEFISCDI</p>
             </div>
@@ -252,19 +259,39 @@
   <footer class="site-footer"><div class="container">© Irina M. Morar</div></footer>
 
   <script>
+    const projectCards = document.querySelectorAll('.project-card');
+
+    function setCardExpanded(card, shouldExpand) {
+      const button = card.querySelector('.project-toggle');
+      const content = card.querySelector('.project-content');
+
+      if (!button || !content) {
+        return;
+      }
+
+      if (shouldExpand) {
+        content.classList.remove('is-collapsed');
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        content.classList.add('is-collapsed');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    }
+
     document.querySelectorAll('.project-toggle').forEach(button => {
       button.addEventListener('click', function() {
         const card = this.closest('.project-card');
-        const content = card.querySelector('.project-content');
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-        if (isExpanded) {
-          content.classList.add('is-collapsed');
-          this.setAttribute('aria-expanded', 'false');
-        } else {
-          content.classList.remove('is-collapsed');
-          this.setAttribute('aria-expanded', 'true');
-        }
+        setCardExpanded(card, !isExpanded);
+      });
+    });
+
+    document.querySelectorAll('.projects-action-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const action = button.getAttribute('data-action');
+        const shouldExpand = action === 'expand-all';
+        projectCards.forEach((card) => setCardExpanded(card, shouldExpand));
       });
     });
   </script>
