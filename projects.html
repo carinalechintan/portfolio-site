@@ -63,11 +63,8 @@
             </button>
           </div>
 
-          <div class="project-content compact-mode is-collapsed">
-            <div class="compact-controls">
-              <button type="button" class="toggle-compact-btn" aria-expanded="false">Arata continut complet</button>
-            </div>
-            <div class="project-meta-highlight keep-visible">
+          <div class="project-content is-collapsed">
+            <div class="project-meta-highlight">
               <p class="project-role"><strong>Rol:</strong> Director de proiect</p>
               <div class="highlight-section">
                 <strong class="highlight-label">Informatii cheie:</strong>
@@ -83,7 +80,7 @@
               </div>
             </div>
             
-            <div class="highlight-box highlight-box-blue keep-visible">
+            <div class="highlight-box highlight-box-blue">
               <h3>Rezumat</h3>
               <p>Proiectul ROFIRFUTURE analizeaza adaptarea provenientelor romanesti de brad (<em>Abies alba</em>) la stres abiotic major si continutul compusilor chimici din scoarta. Scopul este identificarea resurselor genetice cu raspuns adecvat la stres salin, hidric si termic, cu aplicatii in impaduriri si restaurare forestiera. Scoarta de brad este analizata prin FT-IR si HPLC pentru a identifica genotipuri cu potential valoros pentru industrie, farmaceutic si cosmetica.</p>
             </div>
@@ -141,31 +138,9 @@
             </button>
           </div>
 
-          <div class="project-content compact-mode is-collapsed">
-            <div class="compact-controls">
-              <button type="button" class="toggle-compact-btn" aria-expanded="false">Arata continut complet</button>
-            </div>
-            <div class="funding-banner keep-visible">
+          <div class="project-content is-collapsed">
+            <div class="funding-banner">
               <p><strong>Proiect finantat prin:</strong> Programul National de Cercetare, Dezvoltare si Inovare IV (PNCDI IV), competitia Voucher de inovare (CEC), administrata de UEFISCDI</p>
-            </div>
-
-            <div class="tech-brad-quick keep-visible">
-              <h3>TECH-BRAD pe scurt</h3>
-              <ul>
-                <li><strong>Manager proiect:</strong> Conf. dr. Irina Maria Morar</li>
-                <li><strong>Durata:</strong> 6 luni</li>
-                <li><strong>Valoare:</strong> 50.000 lei</li>
-                <li><strong>Beneficiar:</strong> CÎRJEA COMPANY SRL</li>
-              </ul>
-            </div>
-
-            <div class="cirjea-compact keep-visible">
-              <p class="cirjea-compact-title">Acces rapid CÎRJEA COMPANY</p>
-              <p class="cirjea-compact-text">Profil oficial companie si date esentiale pentru parteneriate.</p>
-              <a href="https://listafirme.ro/cirjea-company-srl-38892446/" target="_blank" rel="noopener" class="company-link-btn" aria-label="Deschide profilul oficial CÎRJEA COMPANY pe ListaFirme.ro">
-                <span>Vezi profilul oficial CÎRJEA COMPANY</span>
-                <span class="company-link-arrow" aria-hidden="true">-></span>
-              </a>
             </div>
 
             <div class="project-meta-highlight">
@@ -310,19 +285,6 @@
       }
     }
 
-    function setCompactMode(card, compactMode) {
-      const content = card.querySelector('.project-content');
-      const compactBtn = card.querySelector('.toggle-compact-btn');
-
-      if (!content || !compactBtn) {
-        return;
-      }
-
-      content.classList.toggle('compact-mode', compactMode);
-      compactBtn.textContent = compactMode ? 'Arata continut complet' : 'Revino la versiunea compacta';
-      compactBtn.setAttribute('aria-expanded', String(!compactMode));
-    }
-
     document.querySelectorAll('.project-toggle').forEach(button => {
       button.addEventListener('click', function() {
         const card = this.closest('.project-card');
@@ -340,15 +302,6 @@
       });
     });
 
-    document.querySelectorAll('.toggle-compact-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        const card = button.closest('.project-card');
-        const content = card.querySelector('.project-content');
-        const compactMode = !content.classList.contains('compact-mode');
-        setCompactMode(card, compactMode);
-      });
-    });
-
     document.querySelectorAll('.open-project-btn').forEach((button) => {
       button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
@@ -361,8 +314,6 @@
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-
-    projectCards.forEach((card) => setCompactMode(card, true));
   </script>
 </body>
 </html>

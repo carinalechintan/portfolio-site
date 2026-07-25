@@ -199,67 +199,6 @@
   border-top: 0;
 }
 
-.projects-page .compact-controls {
-  margin-bottom: 12px;
-}
-
-.projects-page .tech-brad-quick,
-.projects-page .cirjea-compact {
-  border: 1px solid rgba(53, 85, 40, 0.2);
-  border-radius: 14px;
-  background: #f7faef;
-  padding: 14px;
-  margin-bottom: 12px;
-}
-
-.projects-page .tech-brad-quick h3 {
-  margin: 0 0 10px;
-  color: var(--proj-accent-dark);
-  font-size: 1rem;
-}
-
-.projects-page .tech-brad-quick ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-.projects-page .tech-brad-quick li {
-  margin-bottom: 6px;
-  color: #273425;
-  font-size: 0.92rem;
-}
-
-.projects-page .cirjea-compact-title {
-  margin: 0 0 6px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--proj-accent-dark);
-}
-
-.projects-page .cirjea-compact-text {
-  margin: 0 0 10px;
-  color: #3e4a3c;
-  font-size: 0.9rem;
-}
-
-.projects-page .toggle-compact-btn {
-  border: 1px solid var(--proj-line);
-  border-radius: 999px;
-  background: #ffffff;
-  color: var(--proj-accent-dark);
-  font-size: 0.82rem;
-  font-weight: 800;
-  padding: 7px 11px;
-  cursor: pointer;
-}
-
-.projects-page .toggle-compact-btn:hover {
-  background: var(--proj-accent-soft);
-}
-
-.projects-page .project-content.compact-mode > :not(.compact-controls):not(.keep-visible) {
-  display: none;
-}
 
 .projects-page .project-meta-highlight,
 .projects-page .highlight-box,
@@ -392,9 +331,5 @@
   .projects-page .projects-action-link {
     width: 100%;
     text-align: center;
-  }
-
-  .projects-page .toggle-compact-btn {
-    width: 100%;
   }
 }
