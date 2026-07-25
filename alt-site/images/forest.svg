@@ -1,0 +1,66 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Peisaj cu padure</title>
+  <desc id="desc">Ilustratie cu brazi verzi in fata dealurilor si cer luminos.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF4E4"/>
+      <stop offset="1" stop-color="#C4E7CF"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#80B996"/>
+      <stop offset="1" stop-color="#5E9A77"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5A9A76"/>
+      <stop offset="1" stop-color="#397856"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F7D4F"/>
+      <stop offset="1" stop-color="#1E5A39"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <circle cx="1320" cy="140" r="74" fill="#F1FFD6" opacity="0.9"/>
+  <circle cx="1348" cy="114" r="22" fill="#F7FFE3" opacity="0.95"/>
+
+  <path d="M0 520C190 420 390 400 600 470C860 555 1060 495 1260 440C1418 398 1510 416 1600 446V900H0V520Z" fill="url(#hill1)"/>
+  <path d="M0 620C220 535 420 558 610 620C810 684 990 656 1170 598C1370 532 1496 548 1600 588V900H0V620Z" fill="url(#hill2)"/>
+  <rect y="690" width="1600" height="210" fill="url(#ground)"/>
+
+  <g fill="#245E3D">
+    <polygon points="70,760 140,620 210,760"/>
+    <rect x="132" y="760" width="16" height="58" fill="#1F4E33"/>
+
+    <polygon points="220,780 310,590 400,780"/>
+    <rect x="302" y="780" width="16" height="62" fill="#1F4E33"/>
+
+    <polygon points="390,770 470,610 550,770"/>
+    <rect x="462" y="770" width="16" height="60" fill="#1F4E33"/>
+
+    <polygon points="560,790 660,570 760,790"/>
+    <rect x="652" y="790" width="16" height="68" fill="#1F4E33"/>
+
+    <polygon points="760,780 850,600 940,780"/>
+    <rect x="842" y="780" width="16" height="64" fill="#1F4E33"/>
+
+    <polygon points="940,760 1010,625 1080,760"/>
+    <rect x="1002" y="760" width="16" height="58" fill="#1F4E33"/>
+
+    <polygon points="1080,785 1175,575 1270,785"/>
+    <rect x="1167" y="785" width="16" height="66" fill="#1F4E33"/>
+
+    <polygon points="1270,770 1350,615 1430,770"/>
+    <rect x="1342" y="770" width="16" height="60" fill="#1F4E33"/>
+
+    <polygon points="1410,780 1490,625 1570,780"/>
+    <rect x="1482" y="780" width="16" height="62" fill="#1F4E33"/>
+  </g>
+
+  <g opacity="0.35" fill="#E9FFF0">
+    <ellipse cx="210" cy="220" rx="90" ry="26"/>
+    <ellipse cx="880" cy="180" rx="120" ry="30"/>
+    <ellipse cx="560" cy="120" rx="78" ry="20"/>
+  </g>
+</svg>
