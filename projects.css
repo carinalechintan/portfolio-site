@@ -65,6 +65,27 @@
   margin-top: 18px;
 }
 
+.projects-page .cirjea-fast-access {
+  margin-top: 14px;
+  border: 1px solid rgba(53, 85, 40, 0.25);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #eef4e6 0%, #f9fbf5 100%);
+  padding: 12px;
+}
+
+.projects-page .cirjea-fast-title {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--proj-accent-dark);
+}
+
+.projects-page .cirjea-fast-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .projects-page .projects-actions {
   margin-top: 14px;
   display: flex;
@@ -178,6 +199,29 @@
   border-top: 0;
 }
 
+.projects-page .compact-controls {
+  margin-bottom: 12px;
+}
+
+.projects-page .toggle-compact-btn {
+  border: 1px solid var(--proj-line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--proj-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+.projects-page .toggle-compact-btn:hover {
+  background: var(--proj-accent-soft);
+}
+
+.projects-page .project-content.compact-mode > :not(.compact-controls):not(.keep-visible) {
+  display: none;
+}
+
 .projects-page .project-meta-highlight,
 .projects-page .highlight-box,
 .projects-page .funding-banner,
@@ -271,6 +315,10 @@
 }
 
 @media (max-width: 640px) {
+  .projects-page .cirjea-fast-actions {
+    flex-direction: column;
+  }
+
   .projects-page .projects-header,
   .projects-page .project-content,
   .projects-page .project-header,
@@ -305,5 +353,9 @@
   .projects-page .projects-action-link {
     width: 100%;
     text-align: center;
+  }
+
+  .projects-page .toggle-compact-btn {
+    width: 100%;
   }
 }

@@ -31,6 +31,13 @@
             <span class="meta-badge">2 proiecte active</span>
             <span class="meta-badge">Rezultate publicate</span>
           </div>
+          <div class="cirjea-fast-access" aria-label="Acces rapid CÎRJEA COMPANY">
+            <p class="cirjea-fast-title">Acces rapid CÎRJEA COMPANY</p>
+            <div class="cirjea-fast-actions">
+              <button type="button" class="projects-action-btn open-project-btn" data-target="proj-tech-brad">Deschide direct TECH-BRAD</button>
+              <a class="projects-action-link" href="https://listafirme.ro/cirjea-company-srl-38892446/" target="_blank" rel="noopener">Profil oficial CÎRJEA</a>
+            </div>
+          </div>
           <div class="projects-actions" aria-label="Actiuni rapide proiecte">
             <button type="button" class="projects-action-btn" data-action="expand-all">Deschide toate</button>
             <button type="button" class="projects-action-btn" data-action="collapse-all">Inchide toate</button>
@@ -56,8 +63,11 @@
             </button>
           </div>
 
-          <div class="project-content is-collapsed">
-            <div class="project-meta-highlight">
+          <div class="project-content compact-mode is-collapsed">
+            <div class="compact-controls">
+              <button type="button" class="toggle-compact-btn" aria-expanded="false">Arata continut complet</button>
+            </div>
+            <div class="project-meta-highlight keep-visible">
               <p class="project-role"><strong>Rol:</strong> Director de proiect</p>
               <div class="highlight-section">
                 <strong class="highlight-label">Informatii cheie:</strong>
@@ -73,7 +83,7 @@
               </div>
             </div>
             
-            <div class="highlight-box highlight-box-blue">
+            <div class="highlight-box highlight-box-blue keep-visible">
               <h3>Rezumat</h3>
               <p>Proiectul ROFIRFUTURE analizeaza adaptarea provenientelor romanesti de brad (<em>Abies alba</em>) la stres abiotic major si continutul compusilor chimici din scoarta. Scopul este identificarea resurselor genetice cu raspuns adecvat la stres salin, hidric si termic, cu aplicatii in impaduriri si restaurare forestiera. Scoarta de brad este analizata prin FT-IR si HPLC pentru a identifica genotipuri cu potential valoros pentru industrie, farmaceutic si cosmetica.</p>
             </div>
@@ -131,12 +141,15 @@
             </button>
           </div>
 
-          <div class="project-content is-collapsed">
-            <div class="funding-banner">
+          <div class="project-content compact-mode is-collapsed">
+            <div class="compact-controls">
+              <button type="button" class="toggle-compact-btn" aria-expanded="false">Arata continut complet</button>
+            </div>
+            <div class="funding-banner keep-visible">
               <p><strong>Proiect finantat prin:</strong> Programul National de Cercetare, Dezvoltare si Inovare IV (PNCDI IV), competitia Voucher de inovare (CEC), administrata de UEFISCDI</p>
             </div>
 
-            <div class="project-meta-highlight">
+            <div class="project-meta-highlight keep-visible">
               <p class="project-role"><strong>Manager proiect:</strong> Conf. dr. Irina Maria Morar</p>
               <div class="highlight-section">
                 <strong class="highlight-label">Detalii proiect:</strong>
@@ -165,7 +178,7 @@
               <p><strong>Furnizor de cercetare:</strong> Universitatea de Stiinte Agricole si Medicina Veterinara Cluj-Napoca, Facultatea de Silvicultura si Cadastru</p>
             </div>
 
-            <div class="company-section company-section-tech-brad">
+            <div class="company-section company-section-tech-brad keep-visible" id="cirjea-company">
               <div class="company-info">
                 <h3>CÎRJEA COMPANY S.R.L. - Beneficiar TECH-BRAD</h3>
                 <p><strong>CÎRJEA COMPANY S.R.L.</strong> este o companie cu capital privat romanesc activa in silvicultura si exploatare forestiera, in functiune din 2018. Compania este autorizata pentru exploatarea masei lemnoase, detinand certificat de conformitate pentru activitati din sectorul forestier si o capacitate anuala de exploatare de aproximativ 10.000 m3 de lemn pe picior.</p>
@@ -278,6 +291,19 @@
       }
     }
 
+    function setCompactMode(card, compactMode) {
+      const content = card.querySelector('.project-content');
+      const compactBtn = card.querySelector('.toggle-compact-btn');
+
+      if (!content || !compactBtn) {
+        return;
+      }
+
+      content.classList.toggle('compact-mode', compactMode);
+      compactBtn.textContent = compactMode ? 'Arata continut complet' : 'Revino la versiunea compacta';
+      compactBtn.setAttribute('aria-expanded', String(!compactMode));
+    }
+
     document.querySelectorAll('.project-toggle').forEach(button => {
       button.addEventListener('click', function() {
         const card = this.closest('.project-card');
@@ -294,6 +320,30 @@
         projectCards.forEach((card) => setCardExpanded(card, shouldExpand));
       });
     });
+
+    document.querySelectorAll('.toggle-compact-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.project-card');
+        const content = card.querySelector('.project-content');
+        const compactMode = !content.classList.contains('compact-mode');
+        setCompactMode(card, compactMode);
+      });
+    });
+
+    document.querySelectorAll('.open-project-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const targetCard = document.getElementById(targetId);
+        if (!targetCard) {
+          return;
+        }
+
+        setCardExpanded(targetCard, true);
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    projectCards.forEach((card) => setCompactMode(card, true));
   </script>
 </body>
 </html>
