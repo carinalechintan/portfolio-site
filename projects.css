@@ -120,6 +120,17 @@
   background: var(--proj-accent-soft);
 }
 
+.projects-page .cirjea-fast-actions .projects-action-link {
+  background: linear-gradient(135deg, var(--proj-accent), var(--proj-accent-dark));
+  border-color: var(--proj-accent-dark);
+  color: #ffffff;
+}
+
+.projects-page .cirjea-fast-actions .projects-action-link:hover {
+  background: linear-gradient(135deg, #4c6c3b, #324c26);
+  color: #ffffff;
+}
+
 /* Cardless list */
 .projects-page .project-list {
   margin-top: 24px;
@@ -287,11 +298,13 @@
 .projects-page .company-link-btn {
   background: linear-gradient(135deg, var(--proj-accent), var(--proj-accent-dark));
   border-color: var(--proj-accent-dark);
+  color: #ffffff;
 }
 
 .projects-page .company-link-btn:hover {
   border-color: #2b4420;
   box-shadow: 0 8px 18px rgba(56, 84, 43, 0.22);
+  color: #ffffff;
 }
 
 @media (max-width: 900px) {
