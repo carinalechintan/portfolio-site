@@ -293,6 +293,22 @@
       });
     });
 
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('a, button, input, textarea, select, label')) {
+          return;
+        }
+
+        const button = card.querySelector('.project-toggle');
+        if (!button) {
+          return;
+        }
+
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        setCardExpanded(card, !isExpanded);
+      });
+    });
+
     document.querySelectorAll('.projects-action-btn').forEach(button => {
       button.addEventListener('click', () => {
         const action = button.getAttribute('data-action');

@@ -146,6 +146,7 @@
   padding: 0 0 22px;
   margin-bottom: 22px;
   border-bottom: 1px solid rgba(56, 84, 43, 0.25);
+  cursor: pointer;
 }
 
 .projects-page .project-card::before {
@@ -170,6 +171,7 @@
   padding: 0 0 10px;
   background: transparent;
   border-bottom: 1px solid rgba(56, 84, 43, 0.2);
+  cursor: pointer;
 }
 
 .projects-page .project-title-section h2 {
